@@ -38,6 +38,8 @@ namespace MIS4200_Team11B.Models
         public string photo { get; set; }
 
 
+        public ICollection<Recognitions> Recognitions { get; set; }
+
         public string employeeName
         {
             get
