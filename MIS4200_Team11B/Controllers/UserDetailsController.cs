@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using MIS4200_Team11B.DAL;
 using MIS4200_Team11B.Models;
+using Microsoft.AspNet.Identity;
 
 namespace MIS4200_Team11B.Controllers
 {
@@ -51,10 +52,22 @@ namespace MIS4200_Team11B.Controllers
         {
             if (ModelState.IsValid)
             {
-                userDetails.ID = Guid.NewGuid();
+
+                Guid memberID;
+                Guid.TryParse(User.Identity.GetUserId(),out memberID);
+                userDetails.ID = memberID;
                 db.UserDetails.Add(userDetails);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                try
+                {
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+                catch (Exception)
+                {
+                    return View("DuplicateUser");
+                }
+
+             
             }
 
             return View(userDetails);
@@ -82,6 +95,8 @@ namespace MIS4200_Team11B.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ID,Email,firstName,lastName,PhoneNumber,Office,Position,hireDate,photo")] UserDetails userDetails)
         {
+
+
             if (ModelState.IsValid)
             {
                 db.Entry(userDetails).State = EntityState.Modified;
