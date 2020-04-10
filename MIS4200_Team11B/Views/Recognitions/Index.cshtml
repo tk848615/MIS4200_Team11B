@@ -1,18 +1,19 @@
 ﻿@model IEnumerable<MIS4200_Team11B.Models.Recognitions>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Recognitions";
 }
-
-<h2>Index</h2>
+    <br />
+    <br />
+<h2>Recognition List</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Recognize", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserDetails.Email)
+           Employee
         </th>
         <th>
             @Html.DisplayNameFor(model => model.description)
@@ -26,7 +27,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserDetails.Email)
+            @Html.DisplayFor(modelItem => item.UserDetails.employeeName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.description)
@@ -37,7 +38,6 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.recognitionID }) |
             @Html.ActionLink("Details", "Details", new { id=item.recognitionID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.recognitionID })
         </td>
     </tr>
 }

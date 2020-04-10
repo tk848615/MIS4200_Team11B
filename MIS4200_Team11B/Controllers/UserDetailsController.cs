@@ -17,9 +17,20 @@ namespace MIS4200_Team11B.Controllers
         private MIS4200_Team11Bcontext db = new MIS4200_Team11Bcontext();
 
         // GET: UserDetails
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.UserDetails.ToList());
+            var testusers = from u in db.UserDetails select u;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                testusers = testusers.Where(u => u.lastName.Contains(searchString) || u.firstName.Contains(searchString));
+               
+                
+                return View(testusers.ToList());
+            }
+
+
+
+                return View(db.UserDetails.ToList());
         }
 
         // GET: UserDetails/Details/5
