@@ -23,7 +23,7 @@
         }
 
         .bg-1 {
-            background-color: #1abc9c; /* Green */
+            background-color: #D3D3D3; /* Light GRay */
             color: #ffffff;
         }
 
@@ -95,7 +95,7 @@
             We want to be able to give centric the ability to search users.
         </p>
 
-        <li>@Html.ActionLink("Users", "Index", "UserDetails")</li>
+        <li>@Html.ActionLink("Users", "Index", "UserDetails", null, new { @class = "btn btn-primary btn-large" })</li>
 
         </a>
     </div>
@@ -107,7 +107,7 @@
             This link gives employees to recognize other employees at Centric.
         </p>
 
-        <li>@Html.ActionLink("Give a Recognition", "Index", "Recognitions")</li>
+        <li>@Html.ActionLink("Give a Recognition", "Index", "Recognitions", null, new { @class = "btn btn-primary btn-large" })</li>
 
         </a>
     </div>
