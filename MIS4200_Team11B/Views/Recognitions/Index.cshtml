@@ -3,8 +3,8 @@
 @{
     ViewBag.Title = "Recognitions";
 }
-    <br />
-    <br />
+<br />
+<br />
 <h2>Recognition List</h2>
 
 <p>
@@ -13,7 +13,7 @@
 <table class="table">
     <tr>
         <th>
-           Employee
+            Employee
         </th>
         <th>
             @Html.DisplayNameFor(model => model.description)
@@ -24,22 +24,23 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.UserDetails.employeeName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.description)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dateOfRecognition)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.recognitionID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.recognitionID }) |
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserDetails.employeeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dateOfRecognition)
+            </td>
+            <td>
+
+                @Html.ActionLink("Details", "Details", new { id = item.recognitionID })
+            </td>
+        </tr>
+    }
 
 </table>

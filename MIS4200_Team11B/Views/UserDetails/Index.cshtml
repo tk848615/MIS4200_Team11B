@@ -38,9 +38,7 @@
         <th>
             @Html.DisplayNameFor(model => model.hireDate)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.photo)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -68,9 +66,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.hireDate)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.photo)
-            </td>
+           
             <td>
                
                 @Html.ActionLink("Details", "Details", new { id = item.ID }) 

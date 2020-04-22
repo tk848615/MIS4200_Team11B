@@ -16,8 +16,10 @@ namespace MIS4200_Team11B.Controllers
         private MIS4200_Team11Bcontext db = new MIS4200_Team11Bcontext();
 
         // GET: Recognitions
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
+
+
             var recognitions = db.Recognitions.Include(r => r.UserDetails);
             return View(recognitions.ToList());
         }

@@ -7,6 +7,23 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
+            @{
+
+                var userID = User.Identity.GetUserName(); // get the email of the user
+
+                // the next line is YOUR context, not mine!
+
+            // MIS4200_Team11Bcontext db = new MIS4200_Team11B.DAL.MIS4200_Team11Bcontext();
+
+                // get the name of the logged in user
+
+//                var userName = db.UserDetails.Where(n => n.email == userID).FirstOrDefault().fullName;
+
+                // get the ID of the logged in user
+
+                var loggedInUserID = User.Identity.GetUserId();
+
+            }
             @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
