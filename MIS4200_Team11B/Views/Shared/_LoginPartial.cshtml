@@ -17,14 +17,14 @@
 
                 // get the name of the logged in user
 
-//                var userName = db.UserDetails.Where(n => n.email == userID).FirstOrDefault().fullName;
+            //var userName = db.UserDetails.Where(n => n.email == userID).FirstOrDefault().fullName;
 
                 // get the ID of the logged in user
 
                 var loggedInUserID = User.Identity.GetUserId();
 
             }
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("View " + User.Identity.GetUserName() + "'s Profile", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>

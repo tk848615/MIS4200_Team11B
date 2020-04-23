@@ -5,10 +5,10 @@
 }
     <br />
     <br />
-<h2>EmployeeDetails</h2>
+<h2>Profile Details</h2>
 
 <div>
-    <h4>UserDetails</h4>
+    <h4>  @Html.DisplayFor(model => model.firstName)  @Html.DisplayFor(model => model.lastName)</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -78,6 +78,5 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

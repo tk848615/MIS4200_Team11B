@@ -11,7 +11,7 @@
     <br />
     <br />
     <div>
-        <h4>Profile Information</h4>
+        <h2>Profile Information</h2>
         <br />
         <hr />
         @{
@@ -32,7 +32,7 @@
             <li>@Html.ActionLink("Edit Profile", "edit", "UserDetails", new { id = loggedInUserID }, null)</li>
         </div>
          <div>
-          <li>@Html.ActionLink("View Recognitions", "Index", "Recognitions", null)</li>
+          <li>@Html.ActionLink("View Recognitions", "Index", "Recognitions")</li>
           </div>
                         <hr />
                         <dl class="dl-horizontal">
@@ -85,8 +85,7 @@
                             <dt>Two-Factor Authentication:</dt>
                             <dd>
                                 <p>
-                                    There are no two-factor authentication providers configured. See <a href="https://go.microsoft.com/fwlink/?LinkId=403804">this article</a>
-                                    for details on setting up this ASP.NET application to support two-factor authentication.
+                                   Not Available
                                 </p>
                                 @*@if (Model.TwoFactor)
                     {
